@@ -1,0 +1,302 @@
+/* CSS Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 10px;
+}
+
+/* COLOR */
+:root {
+  /* Dark Mode */
+  --color-primary: #0c1817;
+  --color-secondary: #0a1f24;
+  --color-third: #525b56;
+  --color-fourth: #be9063;
+  --color-fifth: #ccbeb5;
+}
+
+[data-theme="pink"] {
+  /* Pink Mode */
+  --color-primary: #c0334d;
+  --color-secondary: #d6618f;
+  --color-third: #f1931b;
+  --color-fourth: #f3d4a0;
+  --color-fifth: #743481;
+}
+
+[data-theme="blue"] {
+  /* Blue Mode */
+  --color-primary: #1d65a6;
+  --color-secondary: #192e5b;
+  --color-third: #72a2c0;
+  --color-fourth: #f2a104;
+  --color-fifth: #00743f;
+}
+
+[data-theme="brown"] {
+  /* Brown Mode */
+  --color-primary: #d75404;
+  --color-secondary: #8a2c02;
+  --color-third: #f08b33;
+  --color-fourth: #eecc8d;
+  --color-fifth: #07000e;
+}
+
+.container {
+  min-width: 35rem;
+  height: 100vh;
+  background-color: var(--color-secondary);
+  color: var(--color-fourth);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+/* TIMER */
+.timer-container {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  visibility: visible;
+}
+
+.timer-container h1 {
+  height: 6rem;
+  line-height: 6rem;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  text-align: center;
+
+}
+
+.timer-hms {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* .timer-hms-scroll {
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 1rem;
+  border: 0.5rem inset var(--color-primary);
+} */
+
+.timer-hms h2 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-align: center;
+  width: 10rem;
+  padding: 0.5rem;
+}
+
+.timer-hours,
+.timer-minutes,
+.timer-seconds {
+  height: 8.5rem;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  /* overflow: auto; */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  border: 1px solid #fff;
+  position: relative;
+}
+
+.timer-hours::-webkit-scrollbar,
+.timer-minutes::-webkit-scrollbar,
+.timer-seconds::-webkit-scrollbar {
+  display: none;
+}
+
+.timer-hours::-webkit-scrollbar-thumb,
+.timer-minutes::-webkit-scrollbar-thumb,
+.timer-seconds::-webkit-scrollbar-thumb {
+  width: 0.2rem;
+  background-color: #fff;
+}
+
+.timer-starting {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.timer-starting button {
+  width: 4.5rem;
+  height: 4.5rem;
+  font-size: 2.5rem;
+  border: none;
+  border-radius: 100%;
+  background-color: var(--color-third);
+  color: var(--color-primary);
+}
+
+.timer-starting button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-third);
+  box-shadow: 0.6rem 0.8rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.timer-checked {
+  line-height: 8rem;
+  margin-left: 1rem;
+}
+
+.timer-checked button {
+  font-size: 2rem;
+  border: none;
+  border-radius: 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-third);
+}
+
+.timer-checked button.green {
+  color: green;
+}
+
+.box {
+  width: 9rem;
+  height: 7rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-third);
+  color: var(--color-fifth);
+  line-height: 7rem;
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 700;
+  box-shadow: 0.6rem 0.8rem 1rem rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s ease-in;
+}
+
+.timer-hms .box {
+  opacity: 0;
+}
+
+.timer-hms .box.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+/* COUNTDOWN */
+.countdown-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  visibility: hidden;
+}
+
+.countdown {
+  min-width: 30%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.count {
+  width: 30%;
+  min-width: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+.count h2 {
+  font-size: 2em;
+  color: var(--color-fifth)
+}
+
+.hours,
+.minutes,
+.seconds {
+  border: 3px solid var(--color-primary);
+  border-radius: 0.5rem;
+  font-size: 6em;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0.6rem 0.8rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+/* Countdown settings */
+.countdown-settings {
+  margin-top: 2rem;
+  width: 12rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.countdown-settings button {
+  width: 4.5rem;
+  height: 4.5rem;
+  font-size: 2.5rem;
+  border: none;
+  border-radius: 100%;
+  background-color: var(--color-third);
+  color: var(--color-primary);
+}
+
+.countdown-settings button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-third);
+  box-shadow: 0.6rem 0.8rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.color-mode {
+  width: 4.5rem;
+  height: 4.5rem;
+  border: none;
+  border-radius: 100%;
+  background-color: var(--color-third);
+  color: var(--color-primary);
+  position: absolute;
+  right: 3rem;
+  bottom: 2rem;
+}
+
+.color-mode:hover {
+  background-color: var(--color-primary);
+  color: var(--color-third);
+  box-shadow: 0.6rem 0.8rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.color-mode:active,
+.color-mode:visited {
+  transform: translateY(-0.2rem);
+}
+
+.color-mode input {
+  opacity: 0;
+}
+
+.palette {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/b9470e142a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Countdown Timer</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="timer" class="timer-container">
+      <h1>time remaining</h1>
+      <div class="timer-hms timer-hms-scroll">
+        <div class="timer-hours">
+          <div class="box">00</div>
+          <div class="box">01</div>
+          <div class="box">02</div>
+          <div class="box">03</div>
+          <div class="box">04</div>
+          <div class="box">05</div>
+          <!-- <div class="box">06</div>
+          <div class="box">07</div>
+          <div class="box">08</div>
+          <div class="box">09</div>
+          <div class="box">10</div>
+          <div class="box">11</div>
+          <div class="box">12</div>
+          <div class="box">13</div>
+          <div class="box">14</div>
+          <div class="box">15</div>
+          <div class="box">16</div>
+          <div class="box">17</div>
+          <div class="box">18</div>
+          <div class="box">19</div>
+          <div class="box">20</div>
+          <div class="box">17</div>
+          <div class="box">18</div>
+          <div class="box">19</div>
+          <div class="box">20</div>
+          <div class="box">21</div>
+          <div class="box">22</div>
+          <div class="box">23</div>
+          <div class="box">24</div> -->
+        </div>
+        <div class="timer-minutes">
+          <div class="box">00</div>
+          <div class="box">01</div>
+          <div class="box">02</div>
+          <div class="box">03</div>
+          <div class="box">04</div>
+        </div>
+        <div class="timer-seconds">
+          <div class="box">00</div>
+          <div class="box">01</div>
+          <div class="box">02</div>
+          <div class="box">03</div>
+          <div class="box">04</div>
+        </div>
+        <div class="timer-checked">
+          <button data-mode="checked" class="fa-solid fa-circle-check"></button>
+        </div>
+      </div>
+      <div class="timer-hms">
+        <h2>hours</h2>
+        <h2>minutes</h2>
+        <h2>seconds</h2>
+      </div>
+      <div class="timer-starting">
+        <button class="fa-solid fa-hourglass-start" data-mode="start"></button>
+      </div>
+    </div>
+    <!-- COUNTDOWN -->
+    <div id="countdown" class="countdown-container">
+      <div class="countdown">
+        <div class="hours-wrap count">
+          <div class="hours">
+            <h1 id="hours">00</h1>
+          </div>
+          <h2>HOURS</h2>
+        </div>
+
+        <div class="minutes-wrap count">
+          <div class="minutes">
+            <h1 id="minutes">00</h1>
+          </div>
+          <h2>MINUTES</h2>
+        </div>
+
+        <div class="seconds-wrap count">
+          <div class="seconds">
+            <h1 id="seconds">00</h1>
+          </div>
+          <h2>SECONDS</h2>
+        </div>
+      </div>
+      <div class="countdown-settings">
+        <button data-mode="stop" class="fa-solid fa-stop"></button>
+        <!-- <button data-mode="play" class="fa-solid fa-play"></button> -->
+        <button data-mode="reset" class="fa-solid fa-clock-rotate-left"></button>
+      </div>
+    </div>
+    <div class="color-mode">
+      <label for="palette-toggle" class="fa-solid fa-palette palette"></label>
+      <input type="checkbox" id="palette-toggle">
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
